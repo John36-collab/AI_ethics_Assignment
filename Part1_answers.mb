@@ -1,0 +1,73 @@
+# Part 1: Assignment Answers
+
+## 1. Short Answer Questions
+
+### Q1: Define algorithmic bias and provide two examples of how it manifests in AI systems.
+
+**Algorithmic bias** refers to systematic and repeatable errors in a computer system that create unfair outcomes, such as privileging one arbitrary group of users over others. It occurs when AI systems produce results that are systematically prejudiced due to erroneous assumptions in the machine learning process.
+
+**Examples of algorithmic bias in AI systems:**
+
+1. **Hiring Bias**: AI recruitment tools that have been trained on historical hiring data may learn to discriminate against certain demographics. For example, Amazon had to scrap an AI recruiting tool because it learned to penalize resumes that included the word "women's" (as in "women's chess club captain") and downgraded graduates from two all-women's colleges. The system learned from 10 years of résumés, which came mostly from men, and taught itself to associate men with successful candidates.
+
+2. **Criminal Justice Bias**: COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) algorithm used in the US criminal justice system has been shown to exhibit racial bias. The algorithm was more likely to falsely label Black defendants as future criminals at nearly twice the rate as white defendants, while white defendants were more likely to be mislabeled as low risk than Black defendants.
+
+### Q2: Explain the difference between transparency and explainability in AI. Why are both important?
+
+**Transparency** refers to the openness and accessibility of information about an AI system's design, development, and operation. It involves making the inner workings, data sources, and decision processes of an AI system visible and understandable to stakeholders. Transparency is about providing visibility into how the system works.
+
+**Explainability** refers to the ability of an AI system to provide human-understandable reasons for its decisions and actions. It focuses on the output of the system - being able to articulate why a particular decision was made, what factors influenced it, and how the conclusion was reached.
+
+**Key differences:**
+- Transparency is about the system's internal processes being visible
+- Explainability is about the system being able to articulate its reasoning
+- Transparency can exist without explainability (you can see how something works but not understand why it made a specific decision)
+- Explainability requires some level of transparency to provide meaningful explanations
+
+**Why both are important:**
+
+1. **Trust and Accountability**: Both transparency and explainability help build trust in AI systems by allowing users and stakeholders to understand how decisions are made. This is crucial for holding AI systems and their developers accountable.
+
+2. **Bias Detection**: Transparency allows researchers and auditors to examine the system for potential biases, while explainability helps identify which specific factors led to biased decisions.
+
+3. **Regulatory Compliance**: Many regulations (like GDPR's "right to explanation") require AI systems to be explainable. Transparency helps demonstrate compliance with various legal and ethical requirements.
+
+4. **Debugging and Improvement**: Understanding how a system works (transparency) and why it makes certain decisions (explainability) is essential for debugging, improving, and refining AI systems.
+
+5. **User Empowerment**: Users can make more informed decisions when they understand how AI systems work and why they receive certain recommendations or decisions.
+
+### Q3: How does GDPR (General Data Protection Regulation) impact AI development in the EU?
+
+The General Data Protection Regulation (GDPR) has a significant impact on AI development in the EU in several key ways:
+
+1. **Lawful Basis for Processing**: AI developers must establish a lawful basis for processing personal data under GDPR (consent, contract, legal obligation, vital interests, public task, or legitimate interests). This affects how training data is collected and used.
+
+2. **Data Minimization Principle**: AI systems should only collect and process data that is absolutely necessary for their intended purpose, limiting the scope of data collection and reducing privacy risks.
+
+3. **Purpose Limitation**: Data collected for one purpose cannot be repurposed for AI development without additional consent or legal basis, restricting how existing datasets can be used.
+
+4. **Right to Explanation**: Article 15 of GDPR gives individuals the right to obtain meaningful information about the logic involved in automated decision-making, including the significance and envisaged consequences. This directly impacts AI explainability requirements.
+
+5. **Automated Decision-Making**: GDPR imposes strict limitations on fully automated decision-making that produces legal effects or similarly significant effects. Individuals have the right to human intervention and to express their point of view.
+
+6. **Data Protection by Design and by Default**: AI systems must incorporate data protection principles from the outset, requiring privacy-preserving techniques like anonymization, pseudonymization, and differential privacy.
+
+7. **Data Subject Rights**: AI developers must implement mechanisms to support data subject rights including access, rectification, erasure ("right to be forgotten"), and portability.
+
+8. **Data Protection Impact Assessments (DPIAs)**: High-risk AI processing requires DPIAs to identify and mitigate privacy risks before deployment.
+
+9. **International Data Transfers**: GDPR restrictions on transferring personal data outside the EU impact global AI development and deployment strategies.
+
+10. **Accountability and Documentation**: AI developers must maintain detailed records of processing activities and demonstrate compliance with GDPR principles, creating additional documentation burdens.
+
+These requirements make AI development in the EU more complex but also more privacy-conscious, leading to the emergence of privacy-preserving AI techniques and greater emphasis on ethical AI design.
+
+## 2. Ethical Principles Matching
+
+**A) Justice** - Fair distribution of AI benefits and risks.
+
+**B) Non-maleficence** - Ensuring AI does not harm individuals or society.
+
+**C) Autonomy** - Respecting users' right to control their data and decisions.
+
+**D) Sustainability** - Designing AI to be environmentally friendly.
