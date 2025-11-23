@@ -1,0 +1,114 @@
+Part1
+Q1: Define algorithmic bias and provide two examples of how it manifests in AI systems.
+Algorithmic bias refers to systematic and unfair discrimination produced by an AI system due to skewed data, flawed model design, or biased assumptions embedded in algorithms. Bias leads to unequal treatment of individuals or groups. Examples:
+1. Hiring Systems Bias:
+AI recruitment tools trained on historical male-dominated resumes may undervalue resumes from women, penalizing gender-related terms like “women’s club”.
+2. Facial Recognition Errors:
+Systems trained mostly on lighter-skinned faces exhibit higher error rates for darker-skinned individuals, leading to misidentification, especially in law enforcement contexts.
+Q2: Explain the difference between transparency and explainability in AI. Why are both important?
+Transparency means providing visibility into how an AI system is built — including data sources, model architecture, training processes, limitations, and governance.
+Explainability describes the ability of an AI system to provide understandable, human-interpretable reasons behind its predictions or decisions.
+Why important?
+They build trust between users and technology.
+They help regulators and developers ensure the system is safe, fair, and compliant.
+They allow debugging and accountability when the AI causes harm or makes incorrect decisions.
+Q3: How does GDPR impact AI development in the EU?
+GDPR imposes strict requirements on how personal data is collected, processed, stored, and used in AI systems. Key impacts include:
+Data Minimization: AI developers must limit the amount of personal data they collect.
+Right to Explanation: Users may request explanations for automated decisions affecting them.
+Consent Requirements: Personal data use must be lawful and often requires explicit user consent.
+Accountability: Organizations must document processes, perform impact assessments, and ensure responsible handling of data.
+2. Ethical Principles Matching
+Principle	Definition
+(A) Justice	Fair distribution of AI benefits and risks.
+B) Non-maleficence	Ensuring AI does not harm individuals or society.
+C) Autonomy	Respecting users’ right to control their data and decisions.
+D) Sustainability	Designing AI to be environmentally friendly.
+
+Part 2: Case Study Analysis 
+Case 1: Biased Hiring Tool
+Scenario:
+Amazon’s AI recruiting tool penalized female candidates because it was trained on 10 years of historical data dominated by male applicants.
+A. Identify the source of bias
+1. Training Data Bias:
+The dataset overrepresented male candidates, causing the model to learn male-dominant patterns.
+2. Biased Features:
+The system penalized resumes containing words like “women” or women's organizations.
+3. Lack of Fairness Constraints:
+The model was optimized for performance but not fairness, allowing gender-based disparities to persist.
+B. Three fixes to make the tool fairer
+1. Balanced Training Data:
+Resample, reweight, or augment the dataset to ensure equal representation of genders.
+2. Remove Gender-Proxy Features:
+Identify and remove variables highly correlated with gender (e.g., certain clubs, titles, schools).
+3. Apply Fairness-Aware Algorithms:
+Use fairness constraints such as:
+Disparate impact remover
+Equalized odds
+Reweighing (AI Fairness 360 technique)
+C. Fairness metrics to evaluate after correction
+Disparate Impact Ratio
+Equal Opportunity Difference
+Average Odds Difference
+False Positive/Negative Rate Parity
+Calibration across genders
+Case 2: Facial Recognition in Policing
+Scenario:
+A facial recognition system misidentifies minorities at a higher rate.
+A. Ethical risks
+1. Wrongful Arrests:
+Higher false positive rates among minorities can lead to unjust arrests and legal consequences.
+2. Privacy Violations:
+Unconsented surveillance undermines civil liberties and can result in mass monitoring of minority groups.
+3. Discrimination:
+Systemically affects marginalized groups, reinforcing social inequality.
+4. Loss of Public Trust:
+Communities may distrust law enforcement technology and governance.
+B. Recommended policies for responsible deployment
+
+1. Mandatory Independent Bias Audits:
+Regular algorithmic audits using standardized metrics.
+2. Human-in-the-Loop Review:
+AI decisions must never be the sole basis for arrests; humans should verify identity.
+3. Clear Legal Framework:
+Establish policies on data use, storage, accuracy thresholds, and oversight.
+4. Community Consultation:
+Include affected communities in the decision-making process.
+5. Strict Accuracy Benchmarks:
+Deploy only if the system meets minimum thresholds across all demographic groups.
+📊 300-Word Bias Audit Report — COMPAS Dataset
+
+The COMPAS recidivism dataset has historically raised concerns about racial bias in risk assessment tools used in the U.S. criminal justice system. The objective of this audit was to evaluate whether the COMPAS system disproportionately rates African-American defendants as higher risk compared to Caucasian defendants, using the AI Fairness 360 toolkit.
+
+Data preprocessing involved identifying protected attributes (race), labels (recidivism within two years), and predicted risk scores. Initial analysis showed significant disparities in false positive and false negative rates. African-American individuals exhibited a higher false positive rate, meaning they were more often incorrectly labeled as high-risk despite not reoffending. Conversely, Caucasian defendants showed a higher false negative rate, being incorrectly labeled low-risk.
+
+Fairness metrics revealed violations of equal opportunity, average odds difference, and disparate impact. Specifically, the disparate impact ratio was significantly below the fair threshold of 0.8, indicating unequal treatment between protected and unprotected groups.
+
+Visualizations highlighted clear gaps in predictive performance across racial groups. These disparities suggest bias originating from historical data patterns, socio-economic factors, and unequal policing practices.
+
+To mitigate these issues, several fairness interventions were tested: the Reweighing algorithm, Optimized Preprocessing, and Equalized Odds post-processing. Reweighing produced more balanced prediction outcomes across groups without significantly harming accuracy.
+
+In conclusion, the COMPAS system demonstrates measurable racial bias requiring correction before use in high-stakes decisions. Remediation strategies such as reweighing, stricter fairness constraints, and continuous auditing are essential. Policymakers must enforce transparent reporting, independent auditing, and accountability mechanisms to ensure fair and ethical deployment
+---
+📄 Policy Guidelines for Ethical AI Use in Healthcare
+1. Patient Consent Protocols
+AI systems must process patient data only after explicit, informed consent.
+Consent forms must explain how AI will use data, potential risks, and patient rights.
+Patients must retain the right to withdraw consent at any time.
+Data use must comply with HIPAA/GDPR standards for privacy.
+2. Bias Mitigation Strategies
+Perform demographic fairness audits before deployment.
+Ensure datasets represent all population groups across race, gender, age, and socio-economic status.
+Use fairness-aware algorithms and continuous monitoring to prevent drift.
+Document and publicly disclose known limitations or biases in the system.
+3. Transparency Requirements
+Provide explainable outputs, especially for high-impact decisions such as diagnosis or treatment recommendations.
+Document model architecture, training data origin, validation tests, and risk factors.
+Publish audit reports and ethical compliance documentation.
+Healthcare providers must inform patients whenever AI is used in decision-making.
+
+✅ Ethical Reflection 
+In my future AI projects, I intend to apply ethical principles from the very beginning of the development process. The first step is ensuring that the data I use is collected responsibly, with proper consent and clear documentation of its origin. I will prioritize fairness by examining datasets for demographic imbalances and continuously testing models for bias using tools such as AIF360 or fairness metrics. If imbalances are detected, I will apply mitigation techniques like reweighing, feature review, or algorithmic constraints.
+Another priority is transparency and explainability. I will document model assumptions, training decisions, and limitations so that users, team members, and stakeholders understand how the system arrives at its outputs. Where possible, I will choose interpretable models, and when using complex ones, I will include post-hoc explanation methods.
+I will also embed privacy and security principles, ensuring only necessary data is collected and stored securely using anonymization or encryption. Finally, I will adopt a human-centric approach by involving users early, evaluating potential harms, and ensuring that humans remain in control of high-impact decisions.
+By following these practices, I will ensure that my AI projects contribute positively, minimize harm, and uphold responsible and trustworthy AI values.
